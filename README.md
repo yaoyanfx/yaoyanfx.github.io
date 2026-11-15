@@ -3,4 +3,4 @@
 舞台特效：冷焰火、彩帶紙花、LED 氣柱、地煙、泡泡機設備租賃。
 
 - 網站：https://yaoyanfx.github.io
-- 聯絡：yaoyanfx@gmail.com
+- 聯絡：請見網站「聯絡我們」

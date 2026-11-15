@@ -395,7 +395,7 @@ footer button{background:none;border:0;color:var(--muted);text-decoration:underl
 
 <footer>
   <div class="wrap">
-    <span>© 2026 曜炎創意娛樂有限公司 YAOYAN Effects Co., Ltd.　統一編號 60452137<br>242 新北市新莊區中正路657-1號3樓　0912 805 919　yaoyanfx@gmail.com</span>
+    <span>© 2026 曜炎創意娛樂有限公司 YAOYAN Effects Co., Ltd.　統一編號 60452137<br>242 新北市新莊區中正路657-1號3樓　<span data-ph></span>　<span data-em></span></span>
     <button type="button" id="replay">重播開場</button>
   </div>
 </footer>
@@ -409,6 +409,10 @@ const P1='https://www.youtube.com/playlist?list=PL_svnsQy2gu6iOMKsBGGCaRWu5s_jsx
 const P2='https://www.youtube.com/playlist?list=PL_svnsQy2gu538dyaj8pW83m_sf6ZhuOi';
 const CH='https://www.youtube.com/@yaoyansfx';
 const FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbxegWw_th0ECGmirLxDPGJ_I77GNV_EUK0j8lBQ9KEqTA29wXtEv_dAWyxGEyKDLZhI/exec';  // Google Apps Script
+const _d=a=>String.fromCharCode(...a.map(n=>n-7));
+const EM=_d([128,104,118,128,104,117,109,127,71,110,116,104,112,115,53,106,118,116]), PH=_d([55,64,56,57,63,55,60,64,56,64]), PHD=PH.replace(/(\d{4})(\d{3})(\d{3})/,'$1 $2 $3');
+document.querySelectorAll('[data-em]').forEach(e=>e.textContent=EM);
+document.querySelectorAll('[data-ph]').forEach(e=>e.textContent=PHD);
 const LINE_URL='https://line.me/ti/p/Wd4l0VVhbk';
 const LOGO='data:image/png;base64,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';     // standard logo (Yaoyan_O_OB_logo.png) as data URI
 const LOGO_TC=LOGO;
@@ -871,7 +875,7 @@ function vJoin(){
     <p class="joinlede">曜炎持續招募舞台特效技術夥伴。對演出現場有熱情，歡迎直接傳 LINE 或來信詢問職缺。</p>
     <ul class="perks">${perks.map(([b,t])=>`<li><b>${b}</b><span>${t}</span></li>`).join('')}</ul>
     <div class="joincta"><div>${lineBtn('LINE 詢問職缺')}</div>
-      <div class="line"><div><span>Email · 主旨註明「應徵」</span><b>yaoyanfx@gmail.com</b></div><button class="copy" type="button" data-copy="yaoyanfx@gmail.com">複製</button></div></div>
+      <div class="line"><div><span>Email · 主旨註明「應徵」</span><b>${EM}</b></div><button class="copy" type="button" data-copy="${EM}">複製</button></div></div>
   </div>`;
 }
 const draft={};
@@ -883,8 +887,8 @@ function vContact(){
       <div class="cinfo">
         <p class="co"><b>${COMPANY.name}</b>${COMPANY.en}</p>
         <dl class="coinfo"><dt>統一編號</dt><dd class="mono">${COMPANY.tax}</dd><dt>公司地址</dt><dd>${COMPANY.addr}</dd><dt>LINE ID</dt><dd class="mono">${COMPANY.line}　${lineBtn()}</dd></dl>
-        <div class="line"><div><span>Email</span><b>yaoyanfx@gmail.com</b></div><button class="copy" type="button" data-copy="yaoyanfx@gmail.com">複製</button></div>
-        <div class="line"><div><span>電話 · 一路</span><b>0912 805 919</b></div><button class="copy" type="button" data-copy="0912805919">複製</button></div>
+        <div class="line"><div><span>Email</span><b>${EM}</b></div><button class="copy" type="button" data-copy="${EM}">複製</button></div>
+        <div class="line"><div><span>電話 · 一路</span><b>${PHD}</b></div><button class="copy" type="button" data-copy="${PH}">複製</button></div>
         <div class="line"><div><span>YouTube</span><b>@yaoyansfx</b></div><a class="copy" href="${CH}" target="_blank" rel="noopener">開啟 ↗</a></div>
         <div class="pill3"><div><b>創意思維 Creative Thinking</b><span>舞台特效創意設計，將想像具現化</span></div><div><b>專業團隊 Professional Team</b><span>精準溝通與執行，掌控現場的每一瞬</span></div><div><b>安全至上 Safety Excellence</b><span>系統化專業操作，讓震撼視覺無後顧之憂</span></div></div>
       </div>
@@ -903,6 +907,7 @@ function vContact(){
         </div>
         <label>需求器材<div class="picked" id="picked"></div></label>
         <label for="f-msg">補充說明<textarea id="f-msg" name="msg" placeholder="活動流程、施放時間點、預算範圍、是否需要客製紙花顏色…"></textarea></label>
+        <label class="hp" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">網站<input name="website" tabindex="-1" autocomplete="off"></label>
         <button class="btn primary" type="submit" id="sendBtn" style="justify-content:center">送出詢價</button>
         <p id="formMsg" role="status"></p>
         <div id="out" hidden><pre id="outText"></pre>
@@ -960,8 +965,13 @@ function initForm(){
   const form=document.getElementById('qform'), out=document.getElementById('out'), outText=document.getElementById('outText');
   Object.entries(draft).forEach(([k,v])=>{ if(form.elements[k]) form.elements[k].value=v });
   renderPicked();
+  const t0=Date.now();
   form.addEventListener('submit',e=>{
     e.preventDefault();
+    const msgEl=document.getElementById('formMsg');
+    if(form.elements.website.value || Date.now()-t0<3000){ msgEl.className='ok'; msgEl.textContent='已送出！我們會盡快與您聯繫。'; return }
+    let log=[]; try{ log=JSON.parse(localStorage.getItem('yfxq')||'[]').filter(t=>Date.now()-t<6e5) }catch(_){}
+    if(log.length>=3){ msgEl.className='err'; msgEl.textContent='短時間內送出太多次，請稍後再試，或直接加 LINE 聯繫我們。'; return }
     const fd=new FormData(form), name=fd.get('name').trim(), contact=fd.get('contact').trim();
     const miss=!name?form.elements.name:!contact?form.elements.contact:null;
     if(miss){miss.setCustomValidity('請填寫此欄');miss.reportValidity();miss.focus();return}
@@ -973,10 +983,11 @@ function initForm(){
     fetch(FORM_ENDPOINT,{method:'POST',
       body:new URLSearchParams({name,org:fd.get('org')||'',role:fd.get('role'),contact,date:fd.get('date')||'未定',venue:fd.get('venue')||'未定',items,msg:fd.get('msg')||''})})
       .then(r=>r.json()).then(j=>{ if(!j.ok) throw 0;
+        try{ log.push(Date.now()); localStorage.setItem('yfxq',JSON.stringify(log)) }catch(_){}
         msg.className='ok'; msg.textContent='已送出！我們會盡快與您聯繫。'; form.reset(); Object.keys(draft).forEach(k=>delete draft[k]); quote.clear(); updateQ(); renderPicked(); })
       .catch(()=>{ msg.className='err'; msg.textContent='送出失敗，請改用下方內容複製後傳 LINE 或 Email 給我們。'; out.hidden=false; })
       .finally(()=>{ btn.disabled=false; btn.textContent='送出詢價'; });
-    document.getElementById('mailOut').href='mailto:yaoyanfx@gmail.com?subject='+encodeURIComponent('曜炎特效詢價｜'+name)+'&body='+encodeURIComponent(txt);
+    document.getElementById('mailOut').href='mailto:'+EM+'?subject='+encodeURIComponent('曜炎特效詢價｜'+name)+'&body='+encodeURIComponent(txt);
     out.scrollIntoView({block:'nearest'});
   });
   ['name','contact'].forEach(n=>form.elements[n].addEventListener('input',()=>form.elements[n].setCustomValidity('')));
